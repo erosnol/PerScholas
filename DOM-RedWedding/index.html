@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./Red Wedding Lab.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="starks">
+    </div>
+    <button id="add-child">add-child</button>
+    <button id="red-wedding">red-wedding</button>
+</body>
+<script>
+// Create new element -> starkChild
+const starksdiv = document.querySelector('.starks')
+// Create Two Functions -> addChild and redWedding
+// The addChild function creates new div & appends it to the starks div
+function addChild(){
+    const starkChild = document.createElement('div')
+    starkChild.className = 'child'
+    starkChild.textContent = 'Child'
+    starksdiv.appendChild(starkChild)
+}
+// The redWedding function removes ALL stark children (loop)
+function redWedding(){
+    const starkChildren = document.querySelectorAll('.child')
+    starkChildren.forEach(child => child.remove())
+}
+
+// Attach functions to buttons
+const addButton = document.getElementById('add-child')
+addButton.addEventListener('click', addChild)
+
+const subButton = document.getElementById('red-wedding')
+subButton.addEventListener('click', redWedding)
+
+</script> 
+</html>
